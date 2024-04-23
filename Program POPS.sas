@@ -16,7 +16,7 @@ proc logistic data=binary ;
 run;
 
 
-/*pseudolikelihood fitting: complete cases*/
+/*pseudo-likelihood: complete cases*/
 data POPS;
 set mvp.popslda ;
 response123=100*ABIL1+10*ABIL2+ABIL3;
@@ -107,12 +107,13 @@ lik = 1-
 probbnrm(eta1,eta3,r13);
 ll_13=log(lik);
 end;
+/*sum likelihoods*/
 ll=(ll_12)+(ll_23)+(ll_13);
 model response123 ~ general(ll);
 ods output hessian=mvp.hess_complete parameterestimates=mvp.parms_complete;
 run;
 
-**sandwich estimator;
+*macro for the sandwich estimator;
 %macro sandwich(he=,gr=,pa=);
 data hessian;
 set mvp.&he;
@@ -145,9 +146,8 @@ proc print data=result round;run;
 
 
 
-***********************************************************************************
-**complete pairs***********/
-/*pseudolikelihood fitting*/;
+
+/*pseudolikelihood:complete pairs*/
 data POPS;
 set mvp.popslda ;
 response123=-1000000;
@@ -232,9 +232,7 @@ lik = 1-
 probbnrm(eta1,eta3,r13);
 ll_13=log(lik);
 end;
-/*****************/
-/*met de missings*/
-/****************/
+/* observations with missing values*/
 if ABIL2=. and ABIL3=0 then do;
 lik = CDF('NORMAL',eta3);
 ll_23 = 0;
@@ -283,16 +281,16 @@ if ABIL1=1 and ABIL3=. then do;
 lik = 1-CDF('NORMAL',eta1);
 ll_13=0;
 end;
-/*sum van de likelihoods*/
+/*sum likelihoods*/
 ll=(ll_12)+(ll_23)+(ll_13);
 model response123 ~ general(ll);
 ods output hessian=mvp.hessian_cp parameterestimates=mvp.parms_cp;
 run;
 %sandwich(he=hessian_cp,gr=gradient_cp,pa=parms_cp);
 
-****************************************************************************
-**available cases***********
-/*pseudolikelihood fitting*/;
+
+
+/*pseudolikelihood:available cases*/;
 data POPS;
 set mvp.popslda ;
 response123=-1000000;
@@ -378,9 +376,7 @@ lik = 1-
 probbnrm(eta1,eta3,r13);
 ll_13=log(lik);
 end;
-/*****************/
-/*met de missings*/
-/****************/
+/* observations with missing values*/
 if ABIL2=. and ABIL3=0 then do;
 lik = CDF('NORMAL',eta3);
 ll_23 = log(lik);
@@ -429,7 +425,7 @@ if ABIL1=1 and ABIL3=. then do;
 lik = 1-CDF('NORMAL',eta1);
 ll_13=log(lik);
 end;
-/*sum van de likelihoods*/
+/*sum likelihoods*/
 ll=(ll_12)+(ll_23)+(ll_13);
 model response123 ~ general(ll);
 ods output hessian=mvp.hess_av parameterestimates=mvp.parms_av;
@@ -440,7 +436,8 @@ run;
 
 
 
-/*Imputation*/
+/*Pseudolikelihood after multiple imputation*/
+/*imputation step*/
 proc mi data=mvp.popslda out=mvp.popslda_imp seed=123 nimpute=10;
 class ABIL1 ABIL2 ABIL3 COV CGM;
 fcs discrim(ABIL1 ABIL2 ABIL3 COV CGM);
@@ -448,7 +445,7 @@ fcs reg(BIL);
 var ABIL1 ABIL2 ABIL3 COV CGM BIL;
 run;
 
-/*analysis*/
+/*analysis step*/
 data mvp.popslda_imp;
 set mvp.popslda_imp;
 response123=-50000;
@@ -542,7 +539,7 @@ AdditionalEstimates=nlparmsa CovMatAddEst=nlcovba;
 run;
 
 
-/*combine result for each imputation with sandwich*/
+/*calculate sandwich estimator for each imputed dataset*/
 data cov;
 run;
 
