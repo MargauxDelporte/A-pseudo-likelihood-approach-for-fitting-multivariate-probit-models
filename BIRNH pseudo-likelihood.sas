@@ -1,14 +1,5 @@
 libname mvp '';
 
-
-/*create dummy variable gender*/
-data mvp.BIRNH2;
-set mvp.BIRNH2;
-if sex=1 then gender=0;
-if sex=2 then gender=1;
-run;
-
-
 ****Select complete cases****;
 data BIRNH2;
 set mvp.BIRNH2 ;
