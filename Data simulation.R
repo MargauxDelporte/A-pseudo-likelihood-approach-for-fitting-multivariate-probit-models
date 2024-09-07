@@ -72,10 +72,3 @@ for (x in 1:100) {
   print(x)
 }
 
-library(mvord)
-res <- mvord(
-  formula = MMO2(y_1, y_2, y_3) ~ 1 + as.factor(sex) + age + as.factor(region),
-  data = mydata,
-  cor_general(formula = ~ as.factor(sex)),
-  link = mvprobit()
-)
