@@ -1,7 +1,6 @@
 library(xlsx)
 library(MASS)#mvrnorm
 library(matrixcalc)#ispositivedefinite
-setwd('C:/Users/u0118563/OneDrive - KU Leuven/Projecten/MV probit/Data/Simulatie binary')
 
 
 ###simulation of binary data###
