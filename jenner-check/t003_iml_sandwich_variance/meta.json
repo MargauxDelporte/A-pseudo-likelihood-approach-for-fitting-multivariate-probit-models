@@ -1,0 +1,7 @@
+{
+  "bundle": "t003_iml_sandwich_variance",
+  "source_file": "SIMULATION Pairwise fitting approach binary responses.sas",
+  "source_blob_sha": "93a511070e5b0ab9614b01958882df20e2086cb1",
+  "source_commit": "603a9dc3e386766747a778b46407b7be2349125a",
+  "notes": "Sandwich (robust) variance combination in PROC IML from the pairwise fitting approach: block-diagonal Hessian J via block(), gradient cross-product K, pseudo-likelihood covariance Sigma=inv(J)*K*inv(J), and per-parameter SEs from sqrt(vecdiag(.)). The per-pair Hessian/gradient blocks (normally ODS output of the three pairwise NLMIXED fits) are supplied as small numeric matrices of the same shape; the block()/t()/inv()/vecdiag() operations are their exact statements. Consolidated into one PROC IML step to run stand-alone."
+}

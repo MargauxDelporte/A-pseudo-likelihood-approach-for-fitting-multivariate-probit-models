@@ -1,0 +1,13 @@
+{
+  "_captured_at": "2026-07-23T14:48:50Z",
+  "_captured_run_id": "r_4a56131a87554620a701bd77992f9343",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: PROC NLMIXED data=simulated_0",
+    "NOTE: PROC NLMIXED completed.",
+    "NOTE: PROC PRINT completed: 24 observations printed, 17 variables"
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}

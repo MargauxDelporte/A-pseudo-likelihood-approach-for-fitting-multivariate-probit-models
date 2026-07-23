@@ -1,0 +1,75 @@
+
+                         The NLMIXED Procedure
+                         PROC NLMIXED
+
+    Alpha= 0.0500
+
+                           Specifications
+
+    Dependent Variable             y1b
+    Distribution for Dependent Variable General
+    Random Effects                 None
+    Distribution for Random Effects None
+    Subject Variable               None
+    Optimization Technique         Newton (Newton-CG)
+    Integration Method             None
+
+                             Dimensions
+
+    Observations Used                        20
+    Subjects                                 1
+    Max Obs Per Subject                      20
+    Parameters                               15
+    Quadrature Points                        0
+
+                          Fit Statistics
+
+    Description                                     Value
+    ---------------------------------------- ------------
+    -2 Log Likelihood                                -0.0
+    AIC (smaller is better)                          30.0
+    AICC (smaller is better)                        150.0
+    BIC (smaller is better)                          44.9
+
+                       Parameter Estimates
+
+  Parameter        Estimate       StdErr       DF   tValue        Probt        Alpha
+  ----------     ----------   ----------   ------   ------   ----------   ----------
+  r12                0.0000       0.0000        1                               0.05
+  intercept_1        0.0000       0.0000        1                               0.05
+  beta_sex_1         0.0000       0.0000        1                               0.05
+  beta_age_1         0.0000       0.0000        1                               0.05
+  beta_reg2_1        0.0000       0.0000        1                               0.05
+  beta_reg3_1        0.0000       0.0000        1                               0.05
+  beta_reg4_1        0.0000       0.0000        1                               0.05
+  beta_reg5_1        0.0000       0.0000        1                               0.05
+  intercept_2        0.0000       0.0000        1                               0.05
+  beta_sex_2         0.0000       0.0000        1                               0.05
+  beta_age_2         0.0000       0.0000        1                               0.05
+  beta_reg2_2        0.0000       0.0000        1                               0.05
+  beta_reg3_2        0.0000       0.0000        1                               0.05
+  beta_reg4_2        0.0000       0.0000        1                               0.05
+  beta_reg5_2        0.0000       0.0000        1                               0.05
+
+    Optimization terminated successfully.
+
+
+  Obs    PARAMETER    PARAMETER         NAME  ESTIMATE  ESTIMATE  VALUE  COEF  STANDARDERROR  STDERR  STDERR  DF  TVALUE  PROBT  ALPHA  LOWER  UPPER  GRADIENT
+-----  -----------  -----------  -----------  --------  --------  -----  ----  -------------  ------  ------  --  ------  -----  -----  -----  -----  --------
+    1  R12          R12          R12                 0         0      0     0              0       0       0   1       .      .   0.05      0      0         0
+    2  INTERCEPT_1  INTERCEPT_1  INTERCEPT_1         0         0      0     0              0       0       0   1       .      .   0.05      0      0         0
+    3  BETA_SEX_1   BETA_SEX_1   BETA_SEX_1          0         0      0     0              0       0       0   1       .      .   0.05      0      0         0
+    4  BETA_AGE_1   BETA_AGE_1   BETA_AGE_1          0         0      0     0              0       0       0   1       .      .   0.05      0      0         0
+    5  BETA_REG2_1  BETA_REG2_1  BETA_REG2_1         0         0      0     0              0       0       0   1       .      .   0.05      0      0         0
+    6  BETA_REG3_1  BETA_REG3_1  BETA_REG3_1         0         0      0     0              0       0       0   1       .      .   0.05      0      0         0
+    7  BETA_REG4_1  BETA_REG4_1  BETA_REG4_1         0         0      0     0              0       0       0   1       .      .   0.05      0      0         0
+    8  BETA_REG5_1  BETA_REG5_1  BETA_REG5_1         0         0      0     0              0       0       0   1       .      .   0.05      0      0         0
+    9  INTERCEPT_2  INTERCEPT_2  INTERCEPT_2         0         0      0     0              0       0       0   1       .      .   0.05      0      0         0
+   10  BETA_SEX_2   BETA_SEX_2   BETA_SEX_2          0         0      0     0              0       0       0   1       .      .   0.05      0      0         0
+   11  BETA_AGE_2   BETA_AGE_2   BETA_AGE_2          0         0      0     0              0       0       0   1       .      .   0.05      0      0         0
+   12  BETA_REG2_2  BETA_REG2_2  BETA_REG2_2         0         0      0     0              0       0       0   1       .      .   0.05      0      0         0
+   13  BETA_REG3_2  BETA_REG3_2  BETA_REG3_2         0         0      0     0              0       0       0   1       .      .   0.05      0      0         0
+   14  BETA_REG4_2  BETA_REG4_2  BETA_REG4_2         0         0      0     0              0       0       0   1       .      .   0.05      0      0         0
+   15  BETA_REG5_2  BETA_REG5_2  BETA_REG5_2         0         0      0     0              0       0       0   1       .      .   0.05      0      0         0
+
+
