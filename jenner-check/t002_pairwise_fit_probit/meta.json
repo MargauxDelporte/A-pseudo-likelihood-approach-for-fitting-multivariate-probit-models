@@ -1,0 +1,7 @@
+{
+  "bundle": "t002_pairwise_fit_probit",
+  "source_file": "SIMULATION Pairwise fitting approach binary responses.sas",
+  "source_blob_sha": "93a511070e5b0ab9614b01958882df20e2086cb1",
+  "source_commit": "603a9dc3e386766747a778b46407b7be2349125a",
+  "notes": "Pairwise fitting approach: the pair-(1,2) probit NLMIXED fit from the %pairanalysis macro, with the four-cell bivariate-probit likelihood (probbnrm + cdf('NORMAL')) kept verbatim. External xlsx import replaced by a 20-row inline sample with the same columns (y1b y2b y3b sex age region); ends at the model fit + proc print of the 15 pairwise parameter estimates."
+}

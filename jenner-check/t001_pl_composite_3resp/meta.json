@@ -1,0 +1,7 @@
+{
+  "bundle": "t001_pl_composite_3resp",
+  "source_file": "SIMULATION Pseudo-likelihood estimation binary responses.sas",
+  "source_blob_sha": "9e733b808945b84004584ec6a79a5e62687326a1",
+  "source_commit": "603a9dc3e386766747a778b46407b7be2349125a",
+  "notes": "Pseudo-likelihood (composite) fit of a trivariate probit model from the %composite_lh_3 macro: the three pairwise probit log-likelihoods (built with probbnrm + cdf('NORMAL')) summed into one general() likelihood over a 24-parameter model. External xlsx import replaced by a 20-row inline sample with the same columns (y1b y2b y3b sex age region); macro likelihood body kept verbatim; ends at the model fit + proc print of parameter estimates."
+}

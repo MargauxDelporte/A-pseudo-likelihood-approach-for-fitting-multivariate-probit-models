@@ -1,0 +1,12 @@
+{
+  "_captured_at": "2026-07-23T14:51:27Z",
+  "_captured_run_id": "r_ca035aa1c0214034bb1b65a724679f67",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: PROC IML",
+    "NOTE: PROC PRINT completed: 6 observations printed, 1 variables"
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}
